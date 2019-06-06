@@ -23,9 +23,11 @@ enum Wisdom
     }
     struct Response
     {
+        let quote:Quote
     }
     struct ViewModel
     {
+        let quote:Quote
     }
   }
 }
