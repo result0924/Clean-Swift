@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D034BC4122A8D2CD0059D33F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D034BC4022A8D2CD0059D33F /* Alamofire.framework */; };
+		D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4522A912CD0059D33F /* WisdomViewController.swift */; };
+		D034BC4822A913750059D33F /* WisdomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4722A913750059D33F /* WisdomPresenter.swift */; };
+		D034BC4A22A913960059D33F /* WisdomModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4922A913960059D33F /* WisdomModels.swift */; };
+		D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4B22A913A60059D33F /* WisdomWorker.swift */; };
+		D034BC4E22A913B50059D33F /* WisdomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4D22A913B50059D33F /* WisdomRouter.swift */; };
+		D034BC5022A913F60059D33F /* WisdomInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4F22A913F60059D33F /* WisdomInteractor.swift */; };
 		D074C2BF22A8C4D900131261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074C2BE22A8C4D900131261 /* AppDelegate.swift */; };
 		D074C2C122A8C4D900131261 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074C2C022A8C4D900131261 /* ViewController.swift */; };
 		D074C2C422A8C4D900131261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D074C2C222A8C4D900131261 /* Main.storyboard */; };
@@ -18,6 +24,12 @@
 
 /* Begin PBXFileReference section */
 		D034BC4022A8D2CD0059D33F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D034BC4522A912CD0059D33F /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
+		D034BC4722A913750059D33F /* WisdomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomPresenter.swift; sourceTree = "<group>"; };
+		D034BC4922A913960059D33F /* WisdomModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomModels.swift; sourceTree = "<group>"; };
+		D034BC4B22A913A60059D33F /* WisdomWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomWorker.swift; sourceTree = "<group>"; };
+		D034BC4D22A913B50059D33F /* WisdomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomRouter.swift; sourceTree = "<group>"; };
+		D034BC4F22A913F60059D33F /* WisdomInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomInteractor.swift; sourceTree = "<group>"; };
 		D074C2BB22A8C4D900131261 /* RealtimeTrafficInfomation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeTrafficInfomation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D074C2BE22A8C4D900131261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D074C2C022A8C4D900131261 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +60,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D034BC4222A911320059D33F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D034BC4422A9117F0059D33F /* Wisdom */,
+				D034BC4322A9116A0059D33F /* Traffic */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D034BC4322A9116A0059D33F /* Traffic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Traffic;
+			sourceTree = "<group>";
+		};
+		D034BC4422A9117F0059D33F /* Wisdom */ = {
+			isa = PBXGroup;
+			children = (
+				D034BC4522A912CD0059D33F /* WisdomViewController.swift */,
+				D034BC4722A913750059D33F /* WisdomPresenter.swift */,
+				D034BC4922A913960059D33F /* WisdomModels.swift */,
+				D034BC4B22A913A60059D33F /* WisdomWorker.swift */,
+				D034BC4D22A913B50059D33F /* WisdomRouter.swift */,
+				D034BC4F22A913F60059D33F /* WisdomInteractor.swift */,
+			);
+			path = Wisdom;
+			sourceTree = "<group>";
+		};
 		D074C2B222A8C4D900131261 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +109,7 @@
 		D074C2BD22A8C4D900131261 /* RealtimeTrafficInfomation */ = {
 			isa = PBXGroup;
 			children = (
+				D034BC4222A911320059D33F /* Scenes */,
 				D074C2BE22A8C4D900131261 /* AppDelegate.swift */,
 				D074C2C022A8C4D900131261 /* ViewController.swift */,
 				D074C2C222A8C4D900131261 /* Main.storyboard */,
@@ -175,8 +217,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D074C2C122A8C4D900131261 /* ViewController.swift in Sources */,
+				D034BC4E22A913B50059D33F /* WisdomRouter.swift in Sources */,
 				D074C2BF22A8C4D900131261 /* AppDelegate.swift in Sources */,
+				D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */,
 				D074C2C722A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */,
+				D034BC4822A913750059D33F /* WisdomPresenter.swift in Sources */,
+				D034BC5022A913F60059D33F /* WisdomInteractor.swift in Sources */,
+				D034BC4A22A913960059D33F /* WisdomModels.swift in Sources */,
+				D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

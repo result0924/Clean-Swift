@@ -47,7 +47,7 @@
         <!--格言-->
         <scene sceneID="EuW-cx-S8u">
             <objects>
-                <viewController id="W9w-Ip-WRg" sceneMemberID="viewController">
+                <viewController id="W9w-Ip-WRg" customClass="WisdomViewController" customModule="RealtimeTrafficInfomation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCw-bd-hlu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
