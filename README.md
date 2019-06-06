@@ -2,11 +2,16 @@
 
 # Clean-Swift
 
-- A app that display realtime traffic information in taiwan
+- A app that display realtime traffic information and quote
 
+Traffic information
 - Refer web: https://data.gov.tw/dataset/15221
 - API: https://od.moi.gov.tw/MOI/v1/pbs
 - Refer document: http://data.moi.gov.tw/MoiOD/default/pbs_readme.docx
+
+Wisdom
+- Refer web: https://theysaidso.com/api/
+- API: http://quotes.rest/qod.json // To get the quote of the day use the following api call.
 
 ## Architecture
 <p align="center">
