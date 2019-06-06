@@ -89,6 +89,13 @@
 			path = Wisdom;
 			sourceTree = "<group>";
 		};
+		D034BC5122A920EB0059D33F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D074C2B222A8C4D900131261 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +116,7 @@
 		D074C2BD22A8C4D900131261 /* RealtimeTrafficInfomation */ = {
 			isa = PBXGroup;
 			children = (
+				D034BC5122A920EB0059D33F /* Models */,
 				D034BC4222A911320059D33F /* Scenes */,
 				D074C2BE22A8C4D900131261 /* AppDelegate.swift */,
 				D074C2C022A8C4D900131261 /* ViewController.swift */,
