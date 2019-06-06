@@ -14,6 +14,7 @@
 		D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4B22A913A60059D33F /* WisdomWorker.swift */; };
 		D034BC4E22A913B50059D33F /* WisdomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4D22A913B50059D33F /* WisdomRouter.swift */; };
 		D034BC5022A913F60059D33F /* WisdomInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4F22A913F60059D33F /* WisdomInteractor.swift */; };
+		D034BC5322A922120059D33F /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC5222A922120059D33F /* Quote.swift */; };
 		D074C2BF22A8C4D900131261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074C2BE22A8C4D900131261 /* AppDelegate.swift */; };
 		D074C2C122A8C4D900131261 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074C2C022A8C4D900131261 /* ViewController.swift */; };
 		D074C2C422A8C4D900131261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D074C2C222A8C4D900131261 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		D034BC4B22A913A60059D33F /* WisdomWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomWorker.swift; sourceTree = "<group>"; };
 		D034BC4D22A913B50059D33F /* WisdomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomRouter.swift; sourceTree = "<group>"; };
 		D034BC4F22A913F60059D33F /* WisdomInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomInteractor.swift; sourceTree = "<group>"; };
+		D034BC5222A922120059D33F /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		D074C2BB22A8C4D900131261 /* RealtimeTrafficInfomation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeTrafficInfomation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D074C2BE22A8C4D900131261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D074C2C022A8C4D900131261 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		D034BC5122A920EB0059D33F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D034BC5222A922120059D33F /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				D074C2C122A8C4D900131261 /* ViewController.swift in Sources */,
 				D034BC4E22A913B50059D33F /* WisdomRouter.swift in Sources */,
+				D034BC5322A922120059D33F /* Quote.swift in Sources */,
 				D074C2BF22A8C4D900131261 /* AppDelegate.swift in Sources */,
 				D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */,
 				D074C2C722A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */,
