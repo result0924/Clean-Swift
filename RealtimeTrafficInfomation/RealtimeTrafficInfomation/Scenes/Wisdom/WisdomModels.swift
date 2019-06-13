@@ -12,22 +12,24 @@
 
 import UIKit
 
-enum Wisdom
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum Wisdom {}
+
+extension Wisdom {
+    // MARK: Use cases
+    
+    enum WisdomEvent {
+        struct Request {}
+        
+        struct Response: Codable {
+            var quote: Quote?
+            var success: Bool
+            var errorMsg: String?
+        }
+        
+        struct ViewModel {
+            let quote: Quote?
+            let success: Bool
+            let errorMsg: String?
+        }
     }
-    struct Response
-    {
-        let quote:Quote
-    }
-    struct ViewModel
-    {
-        let quote:Quote
-    }
-  }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01751D622B24513003E57C0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01751D522B24513003E57C0 /* SDWebImage.framework */; };
 		D034BC4122A8D2CD0059D33F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D034BC4022A8D2CD0059D33F /* Alamofire.framework */; };
 		D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4522A912CD0059D33F /* WisdomViewController.swift */; };
 		D034BC4822A913750059D33F /* WisdomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4722A913750059D33F /* WisdomPresenter.swift */; };
@@ -21,9 +22,12 @@
 		D074C2C722A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D074C2C522A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld */; };
 		D074C2C922A8C4DA00131261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D074C2C822A8C4DA00131261 /* Assets.xcassets */; };
 		D074C2CC22A8C4DA00131261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D074C2CA22A8C4DA00131261 /* LaunchScreen.storyboard */; };
+		D08415B622B0D4EC00E0973E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08415B522B0D4EC00E0973E /* Utils.swift */; };
+		D08415B822B0E44D00E0973E /* Alamofire+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D01751D522B24513003E57C0 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		D034BC4022A8D2CD0059D33F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D034BC4522A912CD0059D33F /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
 		D034BC4722A913750059D33F /* WisdomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomPresenter.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		D074C2C822A8C4DA00131261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D074C2CB22A8C4DA00131261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D074C2CD22A8C4DA00131261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D08415B522B0D4EC00E0973E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01751D622B24513003E57C0 /* SDWebImage.framework in Frameworks */,
 				D034BC4122A8D2CD0059D33F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +64,7 @@
 		D034BC3F22A8D2CC0059D33F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D01751D522B24513003E57C0 /* SDWebImage.framework */,
 				D034BC4022A8D2CD0059D33F /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -119,6 +127,7 @@
 		D074C2BD22A8C4D900131261 /* RealtimeTrafficInfomation */ = {
 			isa = PBXGroup;
 			children = (
+				D08415B422B0D4D700E0973E /* Common */,
 				D034BC5122A920EB0059D33F /* Models */,
 				D034BC4222A911320059D33F /* Scenes */,
 				D074C2BE22A8C4D900131261 /* AppDelegate.swift */,
@@ -130,6 +139,15 @@
 				D074C2C522A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld */,
 			);
 			path = RealtimeTrafficInfomation;
+			sourceTree = "<group>";
+		};
+		D08415B422B0D4D700E0973E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D08415B522B0D4EC00E0973E /* Utils.swift */,
+				D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,12 +227,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework\n",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -231,9 +251,11 @@
 				D034BC4E22A913B50059D33F /* WisdomRouter.swift in Sources */,
 				D034BC5322A922120059D33F /* Quote.swift in Sources */,
 				D074C2BF22A8C4D900131261 /* AppDelegate.swift in Sources */,
+				D08415B822B0E44D00E0973E /* Alamofire+Extension.swift in Sources */,
 				D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */,
 				D074C2C722A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */,
 				D034BC4822A913750059D33F /* WisdomPresenter.swift in Sources */,
+				D08415B622B0D4EC00E0973E /* Utils.swift in Sources */,
 				D034BC5022A913F60059D33F /* WisdomInteractor.swift in Sources */,
 				D034BC4A22A913960059D33F /* WisdomModels.swift in Sources */,
 				D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */,
@@ -393,6 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = personal.team.jlai.RealtimeTrafficInfomation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -415,6 +438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = personal.team.jlai.RealtimeTrafficInfomation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

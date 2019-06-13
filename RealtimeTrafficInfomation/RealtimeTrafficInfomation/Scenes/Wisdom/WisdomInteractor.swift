@@ -12,30 +12,35 @@
 
 import UIKit
 
-protocol WisdomBusinessLogic
-{
-  func doSomething(request: Wisdom.Something.Request)
+protocol WisdomBusinessLogic {
+    func show()
+    func fetchQuoteDataStore()
 }
 
-protocol WisdomDataStore
-{
-  //var name: String { get set }
+protocol WisdomDataStore {
+    var quote: Quote? { get set }
 }
 
-class WisdomInteractor: WisdomBusinessLogic, WisdomDataStore
-{
-  var presenter: WisdomPresentationLogic?
-  var worker: WisdomWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Wisdom.Something.Request)
-  {
-    worker = WisdomWorker()
-    worker?.doSomeWork()
+class WisdomInteractor: WisdomDataStore {
+    var presenter: WisdomPresentationLogic?
+    var networkWorker = WisdomNetWorker()
+    var databaseWorker = WisdomDatabaseWorker()
+    var quote: Quote?
+}
+
+// ViewController's output
+
+extension WisdomInteractor: WisdomBusinessLogic {
+    func show() {
+        networkWorker.fetchQuote(complete: { (response) in
+            if response.success {
+                self.databaseWorker.saveQuote(response)
+            }
+            self.presenter?.presentQuoteResult(response: response)
+        })
+    }
     
-    let response = Wisdom.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func fetchQuoteDataStore() {
+        quote = databaseWorker.fetchQuoteFromDatabase().first
+    }
 }

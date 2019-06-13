@@ -12,20 +12,22 @@
 
 import UIKit
 
-protocol WisdomPresentationLogic
-{
-  func presentSomething(response: Wisdom.Something.Response)
+protocol WisdomPresentationLogic {
+    func presentQuoteResult(response: Wisdom.WisdomEvent.Response)
 }
 
-class WisdomPresenter: WisdomPresentationLogic
-{
-  weak var viewController: WisdomDisplayLogic?
+class WisdomPresenter: WisdomPresentationLogic {
+    weak var viewController: WisdomDisplayLogic?
   
-  // MARK: Do something
+    // Interactor's output
   
-  func presentSomething(response: Wisdom.Something.Response)
-  {
-    let viewModel = Wisdom.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentQuoteResult(response: Wisdom.WisdomEvent.Response) {
+        let viewModel = Wisdom.WisdomEvent.ViewModel(quote: response.quote, success: response.success, errorMsg: response.errorMsg)
+        
+        if viewModel.success {
+            self.viewController?.displayQuoteSuccess(viewModel: viewModel)
+        } else {
+            self.viewController?.displayQuoteFailed(viewMode: viewModel)
+        }
+    }
 }

@@ -12,5 +12,7 @@ struct Quote: Codable {
     let text: String
     let author: String
     let title: String
-    let date: Date
+    let date: String
+    let image: String
+    let copyright: String
 }
