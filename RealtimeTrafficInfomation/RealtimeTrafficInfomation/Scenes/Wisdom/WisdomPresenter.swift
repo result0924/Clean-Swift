@@ -14,6 +14,7 @@ import UIKit
 
 protocol WisdomPresentationLogic {
     func presentQuoteResult(response: Wisdom.WisdomEvent.Response)
+    func presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote)
 }
 
 class WisdomPresenter: WisdomPresentationLogic {
@@ -29,5 +30,11 @@ class WisdomPresenter: WisdomPresentationLogic {
         } else {
             self.viewController?.displayQuoteFailed(viewMode: viewModel)
         }
+    }
+    
+    func presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote) {
+        let viewModel = Wisdom.WisdomEvent.cachequote(quote: response.quote)
+        
+        self.viewController?.displayOldQuote(viewModel: viewModel)
     }
 }

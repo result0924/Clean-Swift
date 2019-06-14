@@ -31,5 +31,9 @@ extension Wisdom {
             let success: Bool
             let errorMsg: String?
         }
+        
+        struct cachequote {
+            let quote: Quote?
+        }
     }
 }

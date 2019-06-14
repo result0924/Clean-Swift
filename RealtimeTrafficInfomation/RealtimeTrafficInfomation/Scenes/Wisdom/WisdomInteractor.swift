@@ -14,6 +14,7 @@ import UIKit
 
 protocol WisdomBusinessLogic {
     func show()
+    func showOldQuote()
     func fetchQuoteDataStore()
 }
 
@@ -38,6 +39,11 @@ extension WisdomInteractor: WisdomBusinessLogic {
             }
             self.presenter?.presentQuoteResult(response: response)
         })
+    }
+    
+    func showOldQuote() {
+        quote = databaseWorker.fetchQuoteFromDatabase().first
+        self.presenter?.presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote(quote: quote))
     }
     
     func fetchQuoteDataStore() {

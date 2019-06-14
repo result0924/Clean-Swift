@@ -14,6 +14,7 @@ import UIKit
 import SDWebImage
 
 protocol WisdomDisplayLogic: class {
+    func displayOldQuote(viewModel:Wisdom.WisdomEvent.cachequote)
     func displayQuoteSuccess(viewModel: Wisdom.WisdomEvent.ViewModel)
     func displayQuoteFailed(viewMode: Wisdom.WisdomEvent.ViewModel)
 }
@@ -76,7 +77,7 @@ class WisdomViewController: UIViewController {
         interactor?.show()
     }
     
-    func showSuccessView(quote: Quote) {
+    func showView(quote: Quote) {
         titleLabel.text = quote.title
         quoteLabel.text = quote.text
         otherLabel.text = "Author: \(quote.author)\nDate: \(quote.date)\nCopyright: \(quote.copyright)"
@@ -90,9 +91,15 @@ class WisdomViewController: UIViewController {
 }
 
 extension WisdomViewController: WisdomDisplayLogic {
+    func displayOldQuote(viewModel: Wisdom.WisdomEvent.cachequote) {
+        if let quote = viewModel.quote {
+            showView(quote: quote)
+        }
+    }
+    
     func displayQuoteSuccess(viewModel: Wisdom.WisdomEvent.ViewModel) {
         if let quote = viewModel.quote {
-            showSuccessView(quote: quote)
+            showView(quote: quote)
         } else {
             showFailedView(msg: "can't find quote")
         }
