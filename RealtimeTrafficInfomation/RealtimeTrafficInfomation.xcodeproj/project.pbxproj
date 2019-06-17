@@ -24,6 +24,7 @@
 		D074C2CC22A8C4DA00131261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D074C2CA22A8C4DA00131261 /* LaunchScreen.storyboard */; };
 		D08415B622B0D4EC00E0973E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08415B522B0D4EC00E0973E /* Utils.swift */; };
 		D08415B822B0E44D00E0973E /* Alamofire+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */; };
+		D0DC13F222B7A36500C5542B /* WisdomCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC13F122B7A36500C5542B /* WisdomCoreDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D074C2CD22A8C4DA00131261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08415B522B0D4EC00E0973E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extension.swift"; sourceTree = "<group>"; };
+		D0DC13F122B7A36500C5542B /* WisdomCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomCoreDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D08415B422B0D4D700E0973E /* Common */,
+				D0DC13EE22B7A2DF00C5542B /* Database */,
 				D034BC5122A920EB0059D33F /* Models */,
 				D034BC4222A911320059D33F /* Scenes */,
 				D074C2BE22A8C4D900131261 /* AppDelegate.swift */,
@@ -148,6 +151,14 @@
 				D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D0DC13EE22B7A2DF00C5542B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				D0DC13F122B7A36500C5542B /* WisdomCoreDataStore.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				D074C2C122A8C4D900131261 /* ViewController.swift in Sources */,
 				D034BC4E22A913B50059D33F /* WisdomRouter.swift in Sources */,
 				D034BC5322A922120059D33F /* Quote.swift in Sources */,
+				D0DC13F222B7A36500C5542B /* WisdomCoreDataStore.swift in Sources */,
 				D074C2BF22A8C4D900131261 /* AppDelegate.swift in Sources */,
 				D08415B822B0E44D00E0973E /* Alamofire+Extension.swift in Sources */,
 				D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */,

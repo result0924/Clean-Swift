@@ -42,11 +42,11 @@ extension WisdomInteractor: WisdomBusinessLogic {
     }
     
     func showOldQuote() {
-        quote = databaseWorker.fetchQuoteFromDatabase().first
+        quote = databaseWorker.fetchQuote().first
         self.presenter?.presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote(quote: quote))
     }
     
     func fetchQuoteDataStore() {
-        quote = databaseWorker.fetchQuoteFromDatabase().first
+        quote = databaseWorker.fetchQuote().first
     }
 }
