@@ -2,7 +2,7 @@
 
 # Clean-Swift
 
-- A app that display realtime traffic information and quote
+- A VIP demo app that display realtime traffic information and quote
 
 Traffic information
 - Refer web: https://data.gov.tw/dataset/15221
@@ -63,6 +63,7 @@ ViewController will communicate with the Interactor, and get a response back fro
 - Code less. Test more.
 - Clean Swift iOS Architecture for Fixing Massive View Controller
 - As Uncle Bob pointed out, group and file names should reveal your intentions for the use cases. It should not reflect the underlying framework structure. So we’ll organize each use case under a new group nested within Scenes.
+- Depedency Injection
 
 ## References
 
@@ -72,3 +73,4 @@ ViewController will communicate with the Interactor, and get a response back fro
 - [Clean swift ios architecture](https://clean-swift.com/clean-swift-ios-architecture/)
 - [Clean swift handbook](https://clean-swift.com/handbook/)
 - [Swift-MVP-Sample](https://github.com/powerwolf543/Swift-MVP-Sample)
+- [unit-test-for-networking](https://www.codementor.io/koromiko/unit-test-for-networking-ahdpdqr5k)
