@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D00BD74A22B8E47A00037282 /* VIPDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD74922B8E47A00037282 /* VIPDemoTests.swift */; };
+		D00BD75322B8E71900037282 /* APIConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD75222B8E71900037282 /* APIConnectTests.swift */; };
+		D00BD75622B8F65500037282 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC5222A922120059D33F /* Quote.swift */; };
 		D01751D622B24513003E57C0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01751D522B24513003E57C0 /* SDWebImage.framework */; };
 		D034BC4122A8D2CD0059D33F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D034BC4022A8D2CD0059D33F /* Alamofire.framework */; };
 		D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4522A912CD0059D33F /* WisdomViewController.swift */; };
@@ -43,6 +45,7 @@
 		D00BD74722B8E47A00037282 /* VIPDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00BD74922B8E47A00037282 /* VIPDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPDemoTests.swift; sourceTree = "<group>"; };
 		D00BD74B22B8E47A00037282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D00BD75222B8E71900037282 /* APIConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnectTests.swift; sourceTree = "<group>"; };
 		D01751D522B24513003E57C0 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		D034BC4022A8D2CD0059D33F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D034BC4522A912CD0059D33F /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +92,19 @@
 		D00BD74822B8E47A00037282 /* VIPDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				D00BD75122B8E70200037282 /* API */,
 				D00BD74922B8E47A00037282 /* VIPDemoTests.swift */,
 				D00BD74B22B8E47A00037282 /* Info.plist */,
 			);
 			path = VIPDemoTests;
+			sourceTree = "<group>";
+		};
+		D00BD75122B8E70200037282 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D00BD75222B8E71900037282 /* APIConnectTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		D034BC3F22A8D2CC0059D33F /* Frameworks */ = {
@@ -332,6 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00BD74A22B8E47A00037282 /* VIPDemoTests.swift in Sources */,
+				D00BD75622B8F65500037282 /* Quote.swift in Sources */,
+				D00BD75322B8E71900037282 /* APIConnectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
