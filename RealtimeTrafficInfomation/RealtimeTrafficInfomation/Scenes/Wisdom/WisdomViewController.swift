@@ -69,6 +69,7 @@ class WisdomViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor?.showOldQuote()
     }
     
     override func viewWillAppear(_ animated: Bool) {
