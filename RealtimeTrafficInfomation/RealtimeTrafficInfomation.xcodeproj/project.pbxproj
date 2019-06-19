@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D00BD74A22B8E47A00037282 /* VIPDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD74922B8E47A00037282 /* VIPDemoTests.swift */; };
-		D00BD75322B8E71900037282 /* APIConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD75222B8E71900037282 /* APIConnectTests.swift */; };
-		D00BD75622B8F65500037282 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC5222A922120059D33F /* Quote.swift */; };
 		D00BD75922B9EB0800037282 /* WisdomCoreDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD75822B9EB0800037282 /* WisdomCoreDataStoreTests.swift */; };
+		D00BD75B22BA29F900037282 /* APIConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD75222B8E71900037282 /* APIConnectTests.swift */; };
+		D00BD75C22BA2F4F00037282 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D074C2C522A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld */; };
 		D01751D622B24513003E57C0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01751D522B24513003E57C0 /* SDWebImage.framework */; };
 		D034BC4122A8D2CD0059D33F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D034BC4022A8D2CD0059D33F /* Alamofire.framework */; };
 		D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4522A912CD0059D33F /* WisdomViewController.swift */; };
@@ -351,9 +351,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00BD75C22BA2F4F00037282 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */,
+				D00BD75B22BA29F900037282 /* APIConnectTests.swift in Sources */,
 				D00BD74A22B8E47A00037282 /* VIPDemoTests.swift in Sources */,
-				D00BD75622B8F65500037282 /* Quote.swift in Sources */,
-				D00BD75322B8E71900037282 /* APIConnectTests.swift in Sources */,
 				D00BD75922B9EB0800037282 /* WisdomCoreDataStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +414,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HCL95QE8Y;
+				HEADER_SEARCH_PATHS = $CONFIGURATION_TEMP_DIR/YourProject.build/DerivedSources;
 				INFOPLIST_FILE = VIPDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -435,6 +436,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HCL95QE8Y;
+				HEADER_SEARCH_PATHS = $CONFIGURATION_TEMP_DIR/YourProject.build/DerivedSources;
 				INFOPLIST_FILE = VIPDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

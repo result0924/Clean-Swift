@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import RealtimeTrafficInfomation
+
 class APIConnectTests: XCTestCase {
     let session = MockURLSession()
     lazy var httpClient: HttpClient = {

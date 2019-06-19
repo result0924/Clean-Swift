@@ -32,8 +32,8 @@ class WisdomCoreDataStore {
     }
     
     // MARK: Wisdom
-    
-    func saveQuoteToCoreData(quote: Quote) {
+    @discardableResult
+    func saveQuoteToCoreData(quote: Quote) -> Quotes? {
         let predicate = NSPredicate(format: "text = %@", String(quote.text))
         let existsQuoteModel = getQuoteByPredicate(predicate)
         let context = backgroundContext
@@ -46,12 +46,14 @@ class WisdomCoreDataStore {
             newQuote.date = quote.date
             newQuote.copyright = quote.copyright
             newQuote.image = quote.image
-            
+        
             do {
                 try context.save()
             } catch let error as NSError {
                 print("Could not create quote to core data \(error), \(error.userInfo)")
             }
+            
+            return newQuote
         } else {
             let request = NSFetchRequest<Quotes>(entityName: "Quotes")
             request.predicate = predicate
@@ -72,9 +74,14 @@ class WisdomCoreDataStore {
                     } catch let error as NSError {
                         print("Could not save quote to core data \(error), \(error.userInfo)")
                     }
+                    
+                    return oldQuote
+                } else {
+                    return nil
                 }
             } catch {
                 print("Unexpected error: \(error).")
+                return nil
             }
         }
     }
