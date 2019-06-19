@@ -8,13 +8,35 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class WisdomCoreDataStore {
+    
+    let persistentContainer: NSPersistentContainer!
+    
+    lazy var backgroundContext: NSManagedObjectContext = {
+        return persistentContainer.newBackgroundContext()
+    }()
+    
+    init(container: NSPersistentContainer) {
+        self.persistentContainer = container
+        self.persistentContainer?.viewContext.automaticallyMergesChangesFromParent = true
+    }
+    
+    convenience init() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Cna't get shared app delegate")
+        }
+        
+        self.init(container: appDelegate.persistentContainer)
+    }
+    
+    // MARK: Wisdom
     
     func saveQuoteToCoreData(quote: Quote) {
         let predicate = NSPredicate(format: "text = %@", String(quote.text))
         let existsQuoteModel = getQuoteByPredicate(predicate)
-        let context = Utils.coreDataContext
+        let context = backgroundContext
         
         if existsQuoteModel == nil, let entity = NSEntityDescription.entity(forEntityName: "Quotes", in: context) {
             let newQuote = Quotes(entity: entity, insertInto: context)
@@ -58,7 +80,7 @@ class WisdomCoreDataStore {
     }
     
     func fetchQuoteFromDatabase() -> [Quote] {
-        let context = Utils.coreDataContext
+        let context = backgroundContext
         let request = NSFetchRequest<Quotes>(entityName: "Quotes")
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
         
@@ -74,7 +96,7 @@ class WisdomCoreDataStore {
     }
     
     private func getQuoteByPredicate(_ predicate: NSPredicate) -> Quote? {
-        let context = Utils.coreDataContext
+        let context = backgroundContext
         let request = NSFetchRequest<Quotes>(entityName: "Quotes")
         
         request.predicate = predicate

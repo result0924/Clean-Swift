@@ -26,7 +26,6 @@
 		D074C2C722A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D074C2C522A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld */; };
 		D074C2C922A8C4DA00131261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D074C2C822A8C4DA00131261 /* Assets.xcassets */; };
 		D074C2CC22A8C4DA00131261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D074C2CA22A8C4DA00131261 /* LaunchScreen.storyboard */; };
-		D08415B622B0D4EC00E0973E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08415B522B0D4EC00E0973E /* Utils.swift */; };
 		D08415B822B0E44D00E0973E /* Alamofire+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */; };
 		D0DC13F222B7A36500C5542B /* WisdomCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC13F122B7A36500C5542B /* WisdomCoreDataStore.swift */; };
 		D0DC13FA22B7A97000C5542B /* APIConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC13F922B7A97000C5542B /* APIConnect.swift */; };
@@ -65,7 +64,6 @@
 		D074C2C822A8C4DA00131261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D074C2CB22A8C4DA00131261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D074C2CD22A8C4DA00131261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D08415B522B0D4EC00E0973E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extension.swift"; sourceTree = "<group>"; };
 		D0DC13F122B7A36500C5542B /* WisdomCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomCoreDataStore.swift; sourceTree = "<group>"; };
 		D0DC13F922B7A97000C5542B /* APIConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnect.swift; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 		D08415B422B0D4D700E0973E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D08415B522B0D4EC00E0973E /* Utils.swift */,
 				D08415B722B0E44D00E0973E /* Alamofire+Extension.swift */,
 			);
 			path = Common;
@@ -375,7 +372,6 @@
 				D034BC4C22A913A60059D33F /* WisdomWorker.swift in Sources */,
 				D074C2C722A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */,
 				D034BC4822A913750059D33F /* WisdomPresenter.swift in Sources */,
-				D08415B622B0D4EC00E0973E /* Utils.swift in Sources */,
 				D034BC5022A913F60059D33F /* WisdomInteractor.swift in Sources */,
 				D034BC4A22A913960059D33F /* WisdomModels.swift in Sources */,
 				D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */,
