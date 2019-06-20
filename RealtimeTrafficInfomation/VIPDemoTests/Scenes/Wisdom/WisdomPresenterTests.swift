@@ -38,25 +38,75 @@ class WisdomPresenterTests: XCTestCase {
     // MARK: Test doubles
 
     class WisdomDisplayLogicSpy: WisdomDisplayLogic {
-        var displaySomethingCalled = false
-
-        func displaySomething(viewModel: Wisdom.Something.ViewModel) {
-            displaySomethingCalled = true
+        var displayOldQuoteCalled = false
+        var displayQuoteSuccessCalled = false
+        var displayQuoteFailedCalled = false
+        var quote: Quote?
+        
+        func displayOldQuote(viewModel: Wisdom.WisdomEvent.cachequote) {
+            quote = viewModel.quote
+            displayOldQuoteCalled = true
+        }
+        
+        func displayQuoteSuccess(viewModel: Wisdom.WisdomEvent.ViewModel) {
+            quote = viewModel.quote
+            displayQuoteSuccessCalled = true
+        }
+        
+        func displayQuoteFailed(viewMode: Wisdom.WisdomEvent.ViewModel) {
+            quote = viewMode.quote
+            displayQuoteFailedCalled = true
         }
     }
 
     // MARK: Tests
 
-    func testPresentSomething() {
+    func testDisplayOldQuote() {
         // Given
         let spy = WisdomDisplayLogicSpy()
         sut.viewController = spy
-        let response = Wisdom.Something.Response()
 
         // When
-        sut.presentSomething(response: response)
+        sut.presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote(quote: WisdomSeeds().testQuote))
 
         // Then
-        XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
+        XCTAssertTrue(spy.displayOldQuoteCalled, "display old quote should ask the view controller to display the result")
+        equalWithWisdomSeed(quote: spy.quote)
+    }
+    
+    func testDisplayQuoteSuccess() {
+        // Given
+        let spy = WisdomDisplayLogicSpy()
+        sut.viewController = spy
+        
+        // When
+        sut.presentQuoteResult(response: Wisdom.WisdomEvent.Response(quote: WisdomSeeds().testQuote, success: true, errorMsg: nil))
+        
+        // Then
+        XCTAssertTrue(spy.displayQuoteSuccessCalled, "display quote success should ask the view controller to display the result")
+        equalWithWisdomSeed(quote: spy.quote)
+    }
+    
+    func testDisplayQuoteFailed() {
+        // Given
+        let spy = WisdomDisplayLogicSpy()
+        sut.viewController = spy
+        
+        // When
+        sut.presentQuoteResult(response: Wisdom.WisdomEvent.Response(quote: nil, success: false, errorMsg: "can't fetche quote"))
+        
+        // Then
+        XCTAssertTrue(spy.displayQuoteFailedCalled, "display quote success should ask the view controller to display the result")
+        XCTAssertNil(spy.quote)
+    }
+    
+    private func equalWithWisdomSeed(quote: Quote?) {
+        let wisdomSeeds = WisdomSeeds().testQuote
+        XCTAssertEqual(wisdomSeeds.title, quote?.title)
+        XCTAssertEqual(wisdomSeeds.text, quote?.text)
+        XCTAssertEqual(wisdomSeeds.date, quote?.date)
+        XCTAssertEqual(wisdomSeeds.image, quote?.image)
+        XCTAssertEqual(wisdomSeeds.author, quote?.author)
+        XCTAssertEqual(wisdomSeeds.copyright, quote?.copyright)
     }
 }
