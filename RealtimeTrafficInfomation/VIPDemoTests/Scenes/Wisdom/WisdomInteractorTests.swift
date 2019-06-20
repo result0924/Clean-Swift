@@ -38,25 +38,63 @@ class WisdomInteractorTests: XCTestCase {
     // MARK: Test doubles
 
     class WisdomPresentationLogicSpy: WisdomPresentationLogic {
-        var presentSomethingCalled = false
 
-        func presentSomething(response: Wisdom.Something.Response) {
-            presentSomethingCalled = true
+        var presentQuoteResultSuccessCalled = false
+        var presentQuoteResultFailCalled = false
+        var presentOldQuoteResultCalled = false
+
+        func presentQuoteResult(response: Wisdom.WisdomEvent.Response) {
+            if response.quote != nil {
+                presentQuoteResultSuccessCalled = true
+            } else {
+                presentQuoteResultFailCalled = true
+            }
+        }
+        
+        func presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote) {
+            presentOldQuoteResultCalled = true
         }
     }
 
     // MARK: Tests
-
-    func testDoSomething() {
+    
+    func testPresentQuoteSuccessResult() {
         // Given
-        let spy = WisdomPresentationLogicSpy()
-        sut.presenter = spy
-        let request = Wisdom.Something.Request()
+        let presenterSpy = WisdomPresentationLogicSpy()
+        
+        sut.presenter = presenterSpy
+        
+        // When
+        presenterSpy.presentQuoteResult(response: Wisdom.WisdomEvent.Response(quote: WisdomSeeds().testQuote, success: true, errorMsg: nil))
+        
+        // Then
+        XCTAssertTrue(presenterSpy.presentQuoteResultSuccessCalled, "present quote success should ask the presenter to format the result")
+    }
+
+    func testPresentQuoteFailResult() {
+        // Given
+        let presenterSpy = WisdomPresentationLogicSpy()
+        
+        sut.presenter = presenterSpy
 
         // When
-        sut.doSomething(request: request)
+        presenterSpy.presentQuoteResult(response: Wisdom.WisdomEvent.Response(quote: nil, success: false, errorMsg: "error"))
 
         // Then
-        XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
+        XCTAssertTrue(presenterSpy.presentQuoteResultFailCalled, "present quote fail should ask the presenter to format the result")
     }
+    
+    func testPresentOldQuoteResult() {
+        // Given
+        let presenterSpy = WisdomPresentationLogicSpy()
+        
+        sut.presenter = presenterSpy
+        
+        // When
+        presenterSpy.presentOldQuoteResult(response: Wisdom.WisdomEvent.cachequote(quote: WisdomSeeds().testQuote))
+        
+        // Then
+        XCTAssertTrue(presenterSpy.presentOldQuoteResultCalled, "present old quote should ask the presenter to format the result")
+    }
+    
 }
