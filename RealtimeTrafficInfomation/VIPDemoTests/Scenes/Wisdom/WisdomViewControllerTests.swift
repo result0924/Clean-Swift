@@ -37,7 +37,7 @@ class WisdomViewControllerTests: XCTestCase {
     func setupWisdomViewController() {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        sut = storyboard.instantiateViewController(withIdentifier: "WisdomViewController") as! WisdomViewController
+        sut = storyboard.instantiateViewController(withIdentifier: "WisdomViewController") as? WisdomViewController
     }
   
     func loadView() {
@@ -48,37 +48,98 @@ class WisdomViewControllerTests: XCTestCase {
     // MARK: Test doubles
   
     class WisdomBusinessLogicSpy: WisdomBusinessLogic {
-        var doSomethingCalled = false
+        var quote: Quote?
+        
+        // MARK: Method call expectations
+        
+        var showCalled = false
+        var showOldQuoteCalled = false
+        var fetchQuoteDataStoreCalled = false
     
-        func doSomething(request: Wisdom.Something.Request) {
-            doSomethingCalled = true
-            
+        func show() {
+            showCalled = true
+        }
+        
+        func showOldQuote() {
+            showOldQuoteCalled = true
+        }
+        
+        func fetchQuoteDataStore() {
+            fetchQuoteDataStoreCalled = true
         }
     }
   
     // MARK: Tests
   
-    func testShouldDoSomethingWhenViewIsLoaded() {
+    func testFetchQuoteWhenViewIsLoaded() {
         // Given
         let spy = WisdomBusinessLogicSpy()
         sut.interactor = spy
     
         // When
-        loadView()
+        spy.show()
+        spy.showOldQuote()
+        spy.fetchQuoteDataStore()
     
         // Then
-        XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
+        XCTAssert(spy.showCalled, "Should show right after the view appears")
+        XCTAssert(spy.showOldQuoteCalled, "Should show old quote right after the view appears")
+        XCTAssert(spy.fetchQuoteDataStoreCalled, "Should fetch quote right after the view appears")
     }
-  
-    func testDisplaySomething() {
-        // Given
-        let viewModel = Wisdom.Something.ViewModel()
-
-        // When
-        loadView()
-        sut.displaySomething(viewModel: viewModel)
-
-        // Then
-        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
+    
+    //MARK: Test display logic
+    
+    func testDisplayOldQuote() {
+        sut.loadView()
+        sut.viewDidLoad()
+        
+        let viewModel = Wisdom.WisdomEvent.cachequote(quote: WisdomSeeds().testQuote)
+        
+        if let quote = viewModel.quote {
+            sut.showView(quote: quote)
+            judgeSuccessAssert(quote: quote)
+            return
+        }
+        
+        XCTAssert(false)
+    }
+    
+    func testDisplayQuoteSuccess() {
+        sut.loadView()
+        sut.viewDidLoad()
+        
+        // Success
+        var viewMode = Wisdom.WisdomEvent.ViewModel(quote: WisdomSeeds().testQuote, success: true, errorMsg: nil)
+        if let quote = viewMode.quote {
+            sut.showView(quote: quote)
+            judgeSuccessAssert(quote: quote)
+        } else {
+            XCTAssert(false)
+        }
+        
+        // Fail
+        viewMode = Wisdom.WisdomEvent.ViewModel(quote: nil, success: false, errorMsg: "error")
+        
+        if let _ = viewMode.quote {
+            XCTAssert(false)
+        } else {
+            sut.showFailedView(msg: "can't find quote")
+            XCTAssertEqual(sut.quoteLabel.text, "can't find quote")
+        }
+    }
+    
+    func testDisplayQuoteFailed() {
+        sut.loadView()
+        sut.viewDidLoad()
+        
+        let viewMode = Wisdom.WisdomEvent.ViewModel(quote: nil, success: false, errorMsg: "error")
+        sut.showFailedView(msg: viewMode.errorMsg ?? "can't fetch quote from server")
+        XCTAssertEqual(sut.quoteLabel.text, viewMode.errorMsg)
+    }
+    
+    private func judgeSuccessAssert(quote: Quote) {
+        XCTAssertEqual(sut.titleLabel.text, quote.title)
+        XCTAssertEqual(sut.quoteLabel.text, quote.text)
+        XCTAssertEqual(sut.otherLabel.text, "Author: \(quote.author)\nDate: \(quote.date)\nCopyright: \(quote.copyright)")
     }
 }

@@ -13,8 +13,8 @@
 		D00BD75C22BA2F4F00037282 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D074C2C522A8C4D900131261 /* RealtimeTrafficInfomation.xcdatamodeld */; };
 		D00BD76322BA38DA00037282 /* WisdomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD75F22BA38DA00037282 /* WisdomViewControllerTests.swift */; };
 		D00BD76422BA38DA00037282 /* WisdomInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD76022BA38DA00037282 /* WisdomInteractorTests.swift */; };
-		D00BD76522BA38DA00037282 /* WisdomWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD76122BA38DA00037282 /* WisdomWorkerTests.swift */; };
 		D00BD76622BA38DA00037282 /* WisdomPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD76222BA38DA00037282 /* WisdomPresenterTests.swift */; };
+		D00BD76822BA3C9200037282 /* WisdomSeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BD76722BA3C9200037282 /* WisdomSeeds.swift */; };
 		D01751D622B24513003E57C0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01751D522B24513003E57C0 /* SDWebImage.framework */; };
 		D034BC4122A8D2CD0059D33F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D034BC4022A8D2CD0059D33F /* Alamofire.framework */; };
 		D034BC4622A912CD0059D33F /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034BC4522A912CD0059D33F /* WisdomViewController.swift */; };
@@ -53,8 +53,8 @@
 		D00BD75822B9EB0800037282 /* WisdomCoreDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomCoreDataStoreTests.swift; sourceTree = "<group>"; };
 		D00BD75F22BA38DA00037282 /* WisdomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewControllerTests.swift; sourceTree = "<group>"; };
 		D00BD76022BA38DA00037282 /* WisdomInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomInteractorTests.swift; sourceTree = "<group>"; };
-		D00BD76122BA38DA00037282 /* WisdomWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomWorkerTests.swift; sourceTree = "<group>"; };
 		D00BD76222BA38DA00037282 /* WisdomPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomPresenterTests.swift; sourceTree = "<group>"; };
+		D00BD76722BA3C9200037282 /* WisdomSeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomSeeds.swift; sourceTree = "<group>"; };
 		D01751D522B24513003E57C0 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		D034BC4022A8D2CD0059D33F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D034BC4522A912CD0059D33F /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 			children = (
 				D00BD75F22BA38DA00037282 /* WisdomViewControllerTests.swift */,
 				D00BD76022BA38DA00037282 /* WisdomInteractorTests.swift */,
-				D00BD76122BA38DA00037282 /* WisdomWorkerTests.swift */,
 				D00BD76222BA38DA00037282 /* WisdomPresenterTests.swift */,
+				D00BD76722BA3C9200037282 /* WisdomSeeds.swift */,
 			);
 			path = Wisdom;
 			sourceTree = "<group>";
@@ -380,9 +380,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00BD75C22BA2F4F00037282 /* RealtimeTrafficInfomation.xcdatamodeld in Sources */,
-				D00BD76522BA38DA00037282 /* WisdomWorkerTests.swift in Sources */,
 				D00BD76322BA38DA00037282 /* WisdomViewControllerTests.swift in Sources */,
 				D00BD76622BA38DA00037282 /* WisdomPresenterTests.swift in Sources */,
+				D00BD76822BA3C9200037282 /* WisdomSeeds.swift in Sources */,
 				D00BD75B22BA29F900037282 /* APIConnectTests.swift in Sources */,
 				D00BD74A22B8E47A00037282 /* VIPDemoTests.swift in Sources */,
 				D00BD75922B9EB0800037282 /* WisdomCoreDataStoreTests.swift in Sources */,
